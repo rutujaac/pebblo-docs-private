@@ -1,3 +1,9 @@
+---
+layout: page
+title: Installtion
+nav_order: 1
+---
+
 ## Installation
 
 ### Pre-requisites
