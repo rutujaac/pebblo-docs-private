@@ -1,7 +1,6 @@
 ---
 layout: page
-title: Installtion
-nav_order: 1
+title: Installation
 ---
 
 ## Installation

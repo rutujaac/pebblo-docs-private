@@ -1,1 +1,5 @@
-# Pebblo Docs
+---
+layout: home
+---
+
+# Pebblo Docs Home

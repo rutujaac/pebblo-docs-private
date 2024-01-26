@@ -1,7 +1,6 @@
 ---
 layout: page
-title: RAG with pebblo
-nav_order: 2
+title: RAG with Pebblo
 ---
 
 # Enable RAG applications with Pebblo
