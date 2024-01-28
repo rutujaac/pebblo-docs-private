@@ -1,10 +1,3 @@
----
-layout: page
-title: "Development environment"
-description: "Setting up development environment"
-permalink: /development
----
-
 # Setting up development environment
 
 Pebblo is currently supported in MacOS and Linux.
