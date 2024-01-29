@@ -1,30 +1,49 @@
-# PebbloSafeLoader for Langchain
+# Pebblo SafeLoader for Langchain
 
-## PebbloSafeLoader
+## Overview
 
-Pebblo Safeloader converts any Langchain `DocumentLoader` into a `SafeLoader`. This is done by wrapping the document loader call with `PebbloSafeLoader`
+Pebblo has two components.
 
-### Before
+1. Pebblo Daemon
+2. Pebblo Langchain DocumentLoader
+
+This document describes how to augment your existing Langchain DocumentLoader with Pebblo SafeLoader to get deep data visibility on the types of Topics and Entities ingested into the Gen-AI Langchain application. For details on `Pebblo Daemon` see this [pebblo daemon](/pebblo-docs/daemon.html) document.
+
+Pebblo Safeloader enables safe data ingestion for _any_ Langchain `DocumentLoader`. This is done by wrapping the document loader call with `PebbloSafeLoader`.
+
+## How to Pebblo enable Document Loading?
+
+Assume a Langchain RAG application snippet using `CSVLoader` to read a CSV document for inference.
 
 Here is the snippet of Lanchain RAG application using `CSVLoader`.
 
 
 ```python
-        self.loader = CSVLoader(self.file_path)
+    from langchain.document_loaders.csv_loader import CSVLoader
+
+    loader = CSVLoader(file_path)
+    documents = loader.load()
+    vectordb = Chroma.from_documents(documents, OpenAIEmbeddings())
 ```
 
-### After
+The Pebblo SafeLoader can be enabled with few lines of code change to the above snippet.
 
 ```python
-        self.loader = PebbloSafeLoader(
-             CSVLoader(self.file_path),
-             "RAG app 1", # App nane (Mandatory)
-             "Joe Smith", # Owner (Optional)
-             "Joe Smith RAG application", # Descriptio (Optional)
-        )
+    from langchain.document_loaders.csv_loader import CSVLoader
+    from pebblo_langchain.langchain_community.document_loaders.pebblo import PebbloSafeLoader
+
+    loader = CSVLoader(file_path)
+    loader = PebbloSafeLoader(
+                CSVLoader(file_path),
+                name="RAG app 1", # App name (Mandatory)
+                owner="Joe Smith", # Owner (Optional)
+                description="Support productivity RAG application", # Description (Optional)
+    )
+    documents = loader.load()
+    vectordb = Chroma.from_documents(documents, OpenAIEmbeddings())
 ```
 
-
+A data report with all the findings, both Topics and Entities, will be generated and available for inspection in the `Pebblo Daemon`. See this [pebblo daemon](/pebblo-docs/daemon.html) for further details.
 
 ## Supported Document Loaders
 
@@ -46,4 +65,4 @@ The following Langchain DocumentLoaders are currently supported.
 1. PyPDFDirectoryLoader
 1. PyPDFLoader
 
-> Note: Most other DocumentLoader types would work but they are not testing. If you have successfully tested a particular DocumentLoader other than this list above, please consider raising an PR
+> Note: Most other DocumentLoader types would work. The above list indicates the list that are explicity tested. If you have successfully tested a particular DocumentLoader other than this list above, please consider raising an PR

@@ -22,7 +22,7 @@ sudo apt-get install libpango-1.0-0 libpangoft2-1.0-0
 
 ## Build, Install and Run
 
-Fork and clone the pebblo repo. From within the pebblo directory create a virtual-env, build pebblo package (in `wheel` format), install and run.
+Fork and clone the pebblo repo. From within the pebblo directory, create a python virtual-env, build pebblo package (in `wheel` format), install and run.
 
 ### Build
 
@@ -41,7 +41,7 @@ pip3 install build
 python3 -m build --wheel
 ```
 
-Build artifact as wheel package will be available in `dist/pebblo-<version>-py3-none-any.whl`.
+Build artifact as wheel package will be available in `dist/pebblo-<version>-py3-none-any.whl`
 
 ### Install
 
@@ -67,4 +67,6 @@ to open a pull request against the main Pebblo repo.
 
 ## Communication
 
-Please join Discord server https://discord.gg/Qp5ZunuE to reach out to the Pebblo maintainers, contributors and users.
+Please join Discord server [https://discord.gg/Qp5ZunuE](https://discord.gg/Qp5ZunuE) to reach out to the Pebblo maintainers, contributors and users.
+
+![Discord](https://img.shields.io/discord/1199861582776246403?logo=discord)
