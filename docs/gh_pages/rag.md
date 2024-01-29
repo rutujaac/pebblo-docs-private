@@ -1,15 +1,13 @@
-# Pebblo SafeLoader for Langchain
-
-## Overview
+# Safe DocumentLoader for Langchain
 
 Pebblo has two components.
 
 1. Pebblo Daemon
-2. Pebblo Langchain DocumentLoader
+1. Pebblo Safe DocumentLoader for Langchain
 
-This document describes how to augment your existing Langchain DocumentLoader with Pebblo SafeLoader to get deep data visibility on the types of Topics and Entities ingested into the Gen-AI Langchain application. For details on `Pebblo Daemon` see this [pebblo daemon](/pebblo-docs/daemon.html) document.
+This document describes how to augment your existing Langchain DocumentLoader with Pebblo Safe DocumentLoader to get deep data visibility on the types of Topics and Entities ingested into the Gen-AI Langchain application. For details on `Pebblo Daemon` see this [pebblo daemon](/pebblo-docs/daemon.html) document.
 
-Pebblo Safeloader enables safe data ingestion for _any_ Langchain `DocumentLoader`. This is done by wrapping the document loader call with `PebbloSafeLoader`.
+Pebblo Safeloader enables safe data ingestion for _any_ Langchain `DocumentLoader`. This is done by wrapping the document loader call with `Pebblo Safe DocumentLoader`.
 
 ## How to Pebblo enable Document Loading?
 

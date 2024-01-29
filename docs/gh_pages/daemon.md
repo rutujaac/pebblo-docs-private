@@ -1,11 +1,10 @@
 # Pebblo Daemon
 
-## Overview
 
 Pebblo has two components.
 
 1. Pebblo Daemon
-2. Pebblo Langchain SafeLoader
+1. Pebblo Safe DocumentLoader for Langchain
 
 This document describes how to `Pebblo Daemon` works to enable any Langchain Gen-AI application with deep data visibility on the types of Topics and Entities ingested through Document Loaders. For more details on how Pebblo enabled your Langchain RAG application see this [Pebblo SafeLoader](/pebblo-docs/rag.html) document.
 
