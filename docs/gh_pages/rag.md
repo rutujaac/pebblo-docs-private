@@ -1,13 +1,8 @@
-# Safe DocumentLoader for Langchain
-
-Pebblo has two components.
-
-1. Pebblo Daemon
-1. Pebblo Safe DocumentLoader for Langchain
+# Pebblo Safe DataLoader for Langchain
 
 This document describes how to augment your existing Langchain DocumentLoader with Pebblo Safe DocumentLoader to get deep data visibility on the types of Topics and Entities ingested into the Gen-AI Langchain application. For details on `Pebblo Daemon` see this [pebblo daemon](/pebblo-docs/daemon.html) document.
 
-Pebblo Safeloader enables safe data ingestion for _any_ Langchain `DocumentLoader`. This is done by wrapping the document loader call with `Pebblo Safe DocumentLoader`.
+Pebblo Safeloader enables safe data ingestion for Langchain document loader<sup>1</sup>. This is done by wrapping the document loader call with `Pebblo Safe DocumentLoader`.
 
 ## How to Pebblo enable Document Loading?
 
@@ -30,7 +25,6 @@ The Pebblo SafeLoader can be enabled with few lines of code change to the above 
     from langchain.document_loaders.csv_loader import CSVLoader
     from pebblo_langchain.langchain_community.document_loaders.pebblo import PebbloSafeLoader
 
-    loader = CSVLoader(file_path)
     loader = PebbloSafeLoader(
                 CSVLoader(file_path),
                 name="RAG app 1", # App name (Mandatory)
@@ -63,4 +57,4 @@ The following Langchain DocumentLoaders are currently supported.
 1. PyPDFDirectoryLoader
 1. PyPDFLoader
 
-> Note: Most other DocumentLoader types would work. The above list indicates the list that are explicity tested. If you have successfully tested a particular DocumentLoader other than this list above, please consider raising an PR
+> Note <sup>1</sup>: _Most other Langchain document loaders that implement load() and lazy_load() methods should work. The above list indicates the ones that are explicity tested. If you have successfully tested a particular DocumentLoader other than this list above, please consider raising an PR._
