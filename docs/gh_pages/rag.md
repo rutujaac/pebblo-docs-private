@@ -1,8 +1,8 @@
 # Pebblo Safe DataLoader for Langchain
 
-This document describes how to augment your existing Langchain DocumentLoader with Pebblo Safe DocumentLoader to get deep data visibility on the types of Topics and Entities ingested into the Gen-AI Langchain application. For details on `Pebblo Daemon` see this [pebblo daemon](/pebblo-docs/daemon.html) document.
+This document describes how to augment your existing Langchain DocumentLoader with Pebblo Safe DataLoader to get deep data visibility on the types of Topics and Entities ingested into the Gen-AI Langchain application. For details on `Pebblo Daemon` see this [pebblo daemon](/pebblo-docs/daemon.html) document.
 
-Pebblo Safeloader enables safe data ingestion for Langchain document loader<sup>1</sup>. This is done by wrapping the document loader call with `Pebblo Safe DocumentLoader`.
+Pebblo Safeloader enables safe data ingestion for Langchain document loader<sup>1</sup>. This is done by wrapping the document loader call with `Pebblo Safe DataLoader`.
 
 ## How to Pebblo enable Document Loading?
 
