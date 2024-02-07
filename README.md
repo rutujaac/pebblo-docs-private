@@ -1,2 +1,0 @@
-# pebblo-docs
-Pebblo Documentation

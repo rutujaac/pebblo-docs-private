@@ -10,7 +10,6 @@ Assume a Langchain RAG application snippet using `CSVLoader` to read a CSV docum
 
 Here is the snippet of Lanchain RAG application using `CSVLoader`.
 
-
 ```python
     from langchain.document_loaders.csv_loader import CSVLoader
 
